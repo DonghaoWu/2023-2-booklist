@@ -100,7 +100,7 @@ public class BookDto {
 
 <!-- //////////////////////////// -->
 
-- - `bookStore/src/main/java/com/weCode/bookStore/BookStoreApplication.java`
+- `bookStore/src/main/java/com/weCode/bookStore/BookStoreApplication.java`
 
 ```java
 package com.weCode.bookStore;

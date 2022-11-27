@@ -3,8 +3,10 @@
 - run the app
 
 ```BASH
-$ cd bookStore
 $ ./gradlew bootRun # open http://localhost:8080/api/v1/books
 ```
 
-2. 
+2. Setup new travis account, you have to select a plan and input some payment info.
+
+- .travis.yml must be in the root folder of your project.
+- Travis will run the build every time you make a push.

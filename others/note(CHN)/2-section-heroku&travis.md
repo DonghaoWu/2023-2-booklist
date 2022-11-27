@@ -19,8 +19,6 @@
 
 - location: `/bookStore/.travis.yml`
 
-- check your jdk version
-
 ```bash
 $ javac -version
 ```

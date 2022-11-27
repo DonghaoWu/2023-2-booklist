@@ -25,6 +25,7 @@
 
 ```diff
 $ brew install gradle
+$ cd bookStore
 $ ./gradlew bootRun
 ```
 

@@ -31,13 +31,15 @@ jdk:
   - openjdk8
 ```
 
-- url: travis-ci.org => sign up with github => right top icon => sync account => turn the repo on
+- url: travis-ci.org => sign up with github => right top icon => sync account => select a plan => input payment info => turn the repo on
 
 ```bash
 $ git add .
 $ git commit -m'add travis'
 $ git push
 ```
+
+- Travis will be triggered when you make a push.
 
 4. what is JDK?
 

@@ -42,3 +42,85 @@ $ git push
 4. what is JDK?
 
 - The Java development kit (JDK) contains tools for `Java development`, and the `Java Runtime Environment (JRE)` contains a JVM to convert byte code .class to machine code, and execute it, in short, the JRE runs Java program.
+
+5. Heroku (`CD`)
+
+- login your heroku account
+- click on new
+- name your app
+- book-store-demo-2022
+- download heroku cli
+- heroku commands
+
+```bash
+$ heroku login
+$ heroku auth:token
+```
+
+- go to travis CI => dsahboard => more options => Environment Variables => HEROKU_TOKEN & token => Add
+
+- `travis.yml` 
+
+```yml
+language: java
+jdk:
+  - openjdk8
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_TOKEN
+  app: "book-store-demo-2022"
+```
+
+```bash
+$ git add .
+$ git commit -m'added heroku configuration into .travis.yml'
+$ git push
+```
+
+- after travis finishes their job, go to 
+
+- `book-store-demo-2022.herokuapp.com/api/v1/books`
+
+6. make a change in code part
+
+- src/main/java/com/weCode/bookStore/controller/BookController.java
+
+```java
+package com.weCode.bookStore.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.http.ResponseEntity;
+
+import com.weCode.bookStore.dto.BookDto;
+
+import java.util.List;
+import java.util.ArrayList;
+
+@RestController
+@RequestMapping("api/v1/books")
+public class BookController {
+  @GetMapping
+  public ResponseEntity<List<BookDto>> getBooks() {
+    BookDto book = BookDto.builder()
+                  .title("My First book title!")
+                  .build();
+
+    BookDto bookSecond = BookDto.builder()
+                  .title("My Second book title!")
+                  .build();
+    List<BookDto> books = new ArrayList<>();
+    books.add(book);
+    return ResponseEntity.ok(books);
+  }
+}
+```
+
+```bash
+$ git add .
+$ git commit -m'added second book to test CI/CD.'
+$ git push
+```

@@ -132,3 +132,11 @@ $ git push
 
 - ERROR:  Error installing dpl-heroku:
 	The last version of faraday-net_http (>= 2.0, < 3.1) to support your Ruby & RubyGems was 2.1.0. Try installing it with `gem install faraday-net_http -v 2.1.0` and then running the current command again
+
+- Error: Missing required flag: -a, --app APP
+
+- keep track of the heroku error
+
+```BASH
+$ 
+```
